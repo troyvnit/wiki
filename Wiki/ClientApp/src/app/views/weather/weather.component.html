@@ -1,0 +1,20 @@
+<h1>Weather Forecast</h1>
+<p>The forecast for today</p>
+<p *ngIf="!weather"><em>Loading...</em></p>
+<div class="card text-center" *ngIf="weather">
+    <div class="card-header">
+      {{weather.name}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{weather.weather[0].main}}</h5>
+      <p class="card-text">{{weather.weather[0].description}}</p>
+      <p class="card-text">Temp: {{weather.temperature.temp}} F degree</p>
+      <p class="card-text">Min Temp: {{weather.temperature.minTemp}} F degree</p>
+      <p class="card-text">Max Temp: {{weather.temperature.maxTemp}} F degree</p>
+      <p class="card-text">Wind speed: {{weather.wind.speed}} m/s</p>
+      <p class="card-text">Wind deg: {{weather.wind.deg}}</p>
+    </div>
+    <div class="card-footer text-muted">
+      {{weather.date | date}}
+    </div>
+  </div>
